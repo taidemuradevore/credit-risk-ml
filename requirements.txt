@@ -1,36 +1,6 @@
-# Credit risk default classifier — Python 3.12
-# Install:  pip install -r requirements.txt
-
-# Data loading and cleaning: dedupe (~165 exact duplicates),
-# drop dirty rows (person_age > 100, person_emp_length > 100).
-# Capped below 3.0: pandas 3 changed default string dtype and
-# copy-on-write semantics, and most tutorials/SHAP examples assume 2.x.
-pandas>=2.2,<3.0
-
-# Array math for the cost matrix and the threshold sweep.
-numpy>=2.0,<3.0
-
-# Split, models, preprocessing, metrics:
-#   train_test_split(stratify=y)      -> stratified split, no time column
-#   LogisticRegression                -> baseline (needs imputation + scaling)
-#   HistGradientBoostingClassifier    -> main model (handles NaN natively)
-#   Pipeline / ColumnTransformer      -> fit preprocessing on train folds only
-#   roc_auc_score, average_precision_score -> AUC-ROC and PR-AUC
-scikit-learn>=1.5,<2.0
-
-# ROC / PR curves, cost-vs-threshold plot; also SHAP's rendering backend.
-matplotlib>=3.8,<4.0
-
-# Interpretability: top default predictors for the gradient boosting model.
-shap>=0.46,<1.0
-
-# The notebook deliverable.
-jupyterlab>=4.2,<5.0
-
-# Deliberately NOT included, to keep scope at two weekends:
-#   xgboost / lightgbm  - HistGradientBoostingClassifier is the stated model
-#                         and is competitive at ~32k rows.
-#   imbalanced-learn    - class_weight='balanced' is already in scikit-learn
-#                         and is easier to justify; SMOTE applied before the
-#                         split or on the validation fold is a leakage trap.
-#   seaborn             - matplotlib covers every plot in this project.
+pandas
+numpy
+scikit-learn
+matplotlib
+shap
+jupyterlab

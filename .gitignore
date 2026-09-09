@@ -1,0 +1,19 @@
+# Virtual environment (868MB, never commit this)
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build artifacts: notebook 01 regenerates this deterministically from the raw CSV
+credit_risk_clean.csv
+
+# Model outputs
+preds.npz
+
+# Local working notes, not part of the public repo
+CLAUDE.md
